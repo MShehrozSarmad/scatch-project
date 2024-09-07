@@ -8,7 +8,7 @@ const productsRouter = require('./routes/productsRouter');
 
 const app = express();
 
-app.set('view-engine', 'ejs');
+app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookirParser());
@@ -19,7 +19,7 @@ app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
 app.get('/', (req, res) => {
-    res.send('hy scatch');
+    res.render('index');
 })
 
 app.listen(3000);
