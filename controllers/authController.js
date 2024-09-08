@@ -35,7 +35,8 @@ module.exports.loginUser = async (req, res) => {
   bcrypt.compare(password, user.password, (err, result) => {
     if(result){
         res.cookie('token', generateToken(user));
-        res.send('you are logged in ✅');
+        // res.send('you are logged in ✅');
+        res.redirect('/shop');
     }else{
         res.send('invalid cridentials ❌');
     }

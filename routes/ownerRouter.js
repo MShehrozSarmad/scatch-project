@@ -16,17 +16,10 @@ if(process.env.NODE_ENV === "development"){
 }
 
 router.get('/admin', (req, res) => {
-    res.render('createproducts');
+    const success = req.flash('success');
+    res.render('createproducts', {success});
 })
 
 
 
 module.exports = router;
-
-// <% if(success.length>0){ %>
-//     <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-blue-500">
-//         <span class="inline-block mt-1 mb-1 text-white">
-//             <%= success %>
-//         </span>
-//     </div>
-//     <% } %>
